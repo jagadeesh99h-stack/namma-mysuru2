@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mysore Portfolio Design System - Royal Heritage meets Futuristic */
+
+@layer base {
+  :root {
+    /* Base colors - Dark futuristic theme */
+    --background: 220 25% 6%;
+    --foreground: 45 90% 95%;
+
+    /* Card system with glassmorphism */
+    --card: 220 20% 10%;
+    --card-foreground: 45 85% 92%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 45 85% 92%;
+
+    /* Royal gold primary theme */
+    --primary: 45 95% 58%;
+    --primary-foreground: 220 25% 8%;
+    --primary-glow: 45 100% 70%;
+
+    /* Futuristic cyan accents */
+    --secondary: 195 100% 65%;
+    --secondary-foreground: 220 25% 8%;
+    --secondary-glow: 195 100% 80%;
+
+    /* Muted tones */
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
+
+    /* Accent colors */
+    --accent: 270 100% 70%;
+    --accent-foreground: 220 25% 8%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 25% 8%;
+
+    /* Borders and inputs with glass effect */
+    --border: 220 20% 20%;
+    --input: 220 20% 12%;
+    --ring: 45 95% 58%;
+
+    /* Glass and neon effects */
+    --glass: 220 20% 10% / 0.7;
+    --glass-border: 220 20% 25% / 0.3;
+    --neon-glow: 195 100% 65% / 0.4;
+    --royal-glow: 45 95% 58% / 0.3;
+
+    /* Advanced design tokens */
+    --gradient-royal: linear-gradient(135deg, hsl(45 95% 58%), hsl(35 100% 65%));
+    --gradient-cyber: linear-gradient(135deg, hsl(195 100% 65%), hsl(270 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 6%) 0%, hsl(45 95% 58% / 0.1) 50%, hsl(195 100% 65% / 0.1) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(220 20% 15% / 0.8), hsl(220 25% 12% / 0.6));
+
+    /* Shadows and glows */
+    --shadow-royal: 0 10px 40px hsl(45 95% 58% / 0.3);
+    --shadow-cyber: 0 10px 40px hsl(195 100% 65% / 0.3);
+    --shadow-glass: 0 8px 32px hsl(220 25% 6% / 0.4);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  /* Glass morphism effects */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl p-6;
+  }
+
+  /* Glow effects */
+  .glow-royal {
+    box-shadow: var(--shadow-royal);
+  }
+
+  .glow-cyber {
+    box-shadow: var(--shadow-cyber);
+  }
+
+  /* Hero text effects */
+  .hero-title {
+    background: var(--gradient-royal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px hsl(var(--royal-glow));
+  }
+
+  .cyber-text {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px hsl(var(--neon-glow));
+  }
+
+  /* Animated backgrounds */
+  .floating-orbs::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, hsl(var(--royal-glow)) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-orbs::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, hsl(var(--neon-glow)) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-royal {
+    background: var(--gradient-royal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-cyber {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
